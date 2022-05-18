@@ -1,0 +1,515 @@
+#include <conio.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+struct datos
+       {
+	    int num;
+	    char ultimo;
+        struct datos *liga;
+        };
+
+typedef struct datos nodo;
+
+/* ---------------------SECCION DE LISTAS SIMPLEMENTE LIGADAS--------INICIO------------- */
+void *creamemoria(int n);
+void  recorrecursivo(nodo *p);
+void  recorreiterativo(nodo *p);
+
+nodo *creanodo();
+nodo *creainicio();
+nodo *creafinal();
+nodo *insertarinicio();
+nodo *insertarfinal();
+nodo *insertarantes();
+nodo *insertardespues();
+nodo *liberamemoria(nodo *p);
+nodo *eliminaprimero(nodo *p);
+nodo *eliminaultimo(nodo *p);
+nodo *eliminanodox(nodo *p);
+nodo *eliminanodoanterior(nodo *p);
+nodo *busquedadesordenada(nodo *p);
+/* ---------------------SECCION DE LISTAS SIMPLEMENTE LIGADAS--------FINAL------------- */
+
+/* --------------------------SECCION DE LISTAS CIRCULARES------------INICIO------------- */
+/* --------------------------SECCION DE LISTAS CIRCULARES------------FINAL------------- */
+
+/* ---------------------SECCION DE LISTAS DOBLEMENTE LIGADAS--------INICIO------------- */
+
+/* ---------------------SECCION DE LISTAS DOBLEMENTE LIGADAS--------FINAL------------- */
+
+/* --------------------------SECCION DE LISTAS DOBLEMENTE LIGADAS CIRCULARES------------INICIO------------- */
+/* --------------------------SECCION DE LISTAS DOBLEMENTE LIGADAS CIRCULARES------------FINAL------------- */
+
+int main()
+    {
+     nodo *q, *t, *p = NULL, *u;
+	 int dat, i, ref, x;
+     char opcion1, opcion2, opcion3, opcion4, s = 'z', w = 'z', v = 'z', l = 'z', y = 'z';
+     
+	 while (w == 'z')
+	       {
+     	
+		     system ("CLS");
+		     printf ("\n\n\t\t\t          MENU DE LISTAS \n\n");
+		     printf ("\n\n\t\t\t [a]. Listas Simplemente Ligadas \n");
+		     printf ("\n\n\t\t\t [b]. Listas Circulares \n");
+		     printf ("\n\n\t\t\t [c]. Listas Doblemente Ligadas \n");
+		     printf ("\n\n\t\t\t [d]. Listas Doblemente Ligadas Circulares\n");
+		     printf ("\n\n\t\t\t [e]. Salir \n\n");
+		     printf ("\n\n\t\t\t        Escoja una Opcion: ");
+		     scanf ("%c", &opcion1);
+		     fflush (stdin);
+		     printf ("\n\n\n");
+		     switch (opcion1)
+		            {
+					 case 'a':
+            	  	         s = 'z';
+						     while (s == 'z')
+						           {
+						           	system ("CLS");
+						           	printf ("\n\n\t\t\t   LISTAS SIMPLEMENTE LIGADAS \n\n");
+						           	printf ("\n\n\t\t [a]. Crea Nodo al Inicio de la Lista \n");
+						           	printf ("\n\n\t\t [b]. Crea Nodo al Final de la Lista \n");
+						           	printf ("\n\n\t\t [c]. Insertar Nodo al Inicio de la Lista \n");
+						           	printf ("\n\n\t\t [d]. Insertar Nodo al Final de la Lista \n");
+						           	printf ("\n\n\t\t [e]. Insertar Antes de un Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [f]. Insertar Despues de un Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [g]. Eliminar el Primer Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [h]. Eliminar el Ultimo Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [i]. Eliminar un Nodo con Informacion X \n");
+						           	printf ("\n\n\t\t [j]. Eliminar el Nodo Anterior al Nodo con Informacion X \n");
+						           	printf ("\n\n\t\t [k]. Busqueda en Lista Desordenada \n");
+						           	printf ("\n\n\t\t [l]. Recorre Recursivo \n");
+						           	printf ("\n\n\t\t [m]. Recorre Iterativo \n");
+						           	printf ("\n\n\t\t [n]. Libera la Memoria \n");
+						           	printf ("\n\n\t\t [o]. Salir \n\n");
+						           	printf ("\n\n\t\t\t      Escoja una Opcion: ");
+						           	scanf ("%c", &opcion2);
+						           	fflush (stdin);
+						           	printf ("\n\n\n");
+						           	switch (opcion2)
+						           	       {
+						           	       	case 'a':
+						           	       		     p = liberamemoria(p);
+						           	       		     p = creainicio();
+						           	       		     break;
+				           	       		     
+						           	       	case 'b':
+						           	       		     
+			      	       		     
+						           	       	case 'c':
+						           	       		     
+				           	       		     
+						           	       	case 'd':
+						            	    case 'e':
+						           	    	case 'f':
+          	       		     
+						           	       	case 'g':
+ 
+		 				          	       	case 'h':
+ 
+								   
+						           	       	case 'i':
+            	       		     							               	       		     
+										   
+						           	       	case 'j':
+ 
+								   
+						           	       	case 'k':
+ 
+           	       		     
+						           	       	case 'l':
+						           	       		     recorrecursivo(p);
+						           	       		     getch();
+						           	       		     break;
+           	       		     
+						           	       	case 'm':
+						           	       		     recorreiterativo(p);
+						           	       		     getch();
+						           	       		     break;
+           	       		     
+						           	       	case 'n':
+						           	       		     if (p != NULL)
+						           	       		        {
+						           	       		         p = liberamemoria(p);
+						           	       		         p = NULL;
+						           	       		         printf ("\n\n\n\t\t\t Memoria Libre !!!");
+						           	       		        }
+						           	       		     else
+						           	       		         printf ("\n\n\n\t\t La lista esta vacia !!!");
+						           	       		     getch();
+						           	       		     break;
+           	       		     
+						           	       	case 'o':
+						           	       		     if (p != NULL)
+						           	       		        {
+						           	       		         p = liberamemoria(p);
+														 p = NULL;
+													    }
+						           	       		     s = 'x';
+						           	       		     break;
+		           	       		     
+						           	       	default:
+						           	       		     printf ("\n\n\t\t Opcion INVALIDA !!!");
+						           	       		     getch();
+						           	       		     break;   	       		      		     
+						           	       }
+							       }
+							 break;
+
+					 case 'b':
+            	  	         v = 'z';
+						     while (v == 'z')
+						           {
+						           	system ("CLS");
+						           	printf ("\n\n\t\t\t      LISTAS CIRCULARES \n\n");
+						           	printf ("\n\n\t\t [a]. Crea Nodo al Inicio de la Lista \n");
+						           	printf ("\n\n\t\t [b]. Crea Nodo al Final de la Lista \n");
+						           	printf ("\n\n\t\t [c]. Insertar Nodo al Inicio de la Lista \n");
+						           	printf ("\n\n\t\t [d]. Insertar Nodo al Final de la Lista \n");
+						           	printf ("\n\n\t\t [e]. Insertar Antes de un Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [f]. Insertar Despues de un Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [g]. Eliminar el Primer Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [h]. Eliminar el Ultimo Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [i]. Eliminar un Nodo con Informacion X \n");
+						           	printf ("\n\n\t\t [j]. Eliminar el Nodo Anterior al Nodo con Informacion X \n");
+						           	printf ("\n\n\t\t [k]. Busqueda en Lista Desordenada \n");
+						           	printf ("\n\n\t\t [l]. Recorre Recursivo \n");
+						           	printf ("\n\n\t\t [m]. Recorre Iterativo \n");
+						           	printf ("\n\n\t\t [n]. Libera la Memoria \n");
+						           	printf ("\n\n\t\t [o]. Salir \n\n");
+						           	printf ("\n\n\t\t\t      Escoja una Opcion: ");
+						           	scanf ("%c", &opcion3);
+						           	fflush (stdin);
+						           	printf ("\n\n\n");
+						           	switch (opcion3)
+						           	       {
+						           	       	case 'a':
+						           	      		     
+						           	       	case 'b':
+						        		     
+						           	       	case 'c':
+					       	       		     
+						           	       	case 'd':
+						  	           	    case 'e':
+						          
+						           	       	case 'f':
+						                 	       		     
+						           	       	case 'g':
+				   		     
+		 				          	       	case 'h':
+		  					           	    case 'i':
+						           	       	case 'j':
+								   
+						           	       	case 'k':
+						              	       		     
+						           	       	case 'l':
+						          	       	case 'm':
+          	       		     
+						           	       	case 'n':
+						           	       		     if (p != NULL)
+						           	       		        {
+						           	       				 p = NULL;						           	       		         
+						           	       		         printf ("\n\n\n\t\t\t Memoria Libre !!!");
+						           	       		        }
+						           	       		     else
+						           	       		         printf ("\n\n\n\t\t La lista esta vacia !!!");
+						           	       		     getch();
+						           	       		     break;
+           	       		     
+						           	       	case 'o':
+						           	       		     if (p != NULL)
+						           	       		        {
+						           	       	            }
+						           	       		     v = 'x';
+						           	       		     break;
+		           	       		     
+						           	       	default:
+						           	       		     printf ("\n\n\t\t Opcion INVALIDA !!!");
+						           	       		     getch();
+						           	       		     break;   	       		      		     
+						           	       }
+							       }
+							 break;
+
+					 case 'c':
+            	  	         l = 'z';
+						     while (l == 'z')
+						           {
+						           	system ("CLS");
+						           	printf ("\n\n\t\t\t      LISTAS DOBLEMENTE LIGADAS \n\n");
+						           	printf ("\n\n\t\t [a]. Crea Nodo al Inicio de la Lista \n");
+						           	printf ("\n\n\t\t [b]. Crea Nodo al Final de la Lista \n");
+						           	printf ("\n\n\t\t [c]. Insertar Nodo al Inicio de la Lista \n");
+						           	printf ("\n\n\t\t [d]. Insertar Nodo al Final de la Lista \n");
+						           	printf ("\n\n\t\t [e]. Insertar Antes de un Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [f]. Insertar Despues de un Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [g]. Eliminar el Primer Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [h]. Eliminar el Ultimo Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [i]. Eliminar un Nodo con Informacion X \n");
+						           	printf ("\n\n\t\t [j]. Eliminar el Nodo Anterior al Nodo con Informacion X \n");
+						           	printf ("\n\n\t\t [k]. Busqueda en Lista Desordenada \n");
+						           	printf ("\n\n\t\t [l]. Recorre Recursivo \n");
+						           	printf ("\n\n\t\t [m]. Recorre Iterativo \n");
+						           	printf ("\n\n\t\t [n]. Libera la Memoria \n");
+						           	printf ("\n\n\t\t [o]. Salir \n\n");
+						           	printf ("\n\n\t\t\t      Escoja una Opcion: ");
+						           	scanf ("%c", &opcion2);
+						           	fflush (stdin);
+						           	printf ("\n\n\n");
+						           	switch (opcion2)
+						           	       {
+						           	       	case 'a':
+						           	       	case 'b':
+						          	       	case 'c':
+						           	       	case 'd':
+						           	       	case 'e':
+						           	       	case 'f':
+						           	      	case 'g':
+						           	      	case 'h':
+						          						   
+						           	       	case 'i':
+						           		    case 'j':
+						           	       					   
+						           	       	case 'k':
+						           	       	case 'l':
+          	       		     
+						           	       	case 'm':
+          	       		     
+						           	       	case 'n':
+						           	       		     if (p != NULL)
+						           	       		        {
+						           	       		         p = NULL;
+						           	       		         printf ("\n\n\n\t\t\t Memoria Libre !!!");
+						           	       		        }
+						           	       		     else
+						           	       		         printf ("\n\n\n\t\t La lista esta vacia !!!");
+						           	       		     getch();
+						           	       		     break;
+           	       		     
+						           	       	case 'o':
+						           	       		     if (p != NULL)
+						           	       		        {
+						           	       		         
+														 p = NULL;
+													    }
+						           	       		     l = 'x';
+						           	       		     break;
+		           	       		     
+						           	       	default:
+						           	       		     printf ("\n\n\t\t Opcion INVALIDA !!!");
+						           	       		     getch();
+						           	       		     break;   	       		      		     
+						           	       }
+							       }
+							 break;
+
+					 case 'd':
+            	  	         y = 'z';
+						     while (y == 'z')
+						           {
+						           	system ("CLS");
+						           	printf ("\n\n\t\t\t      LISTAS DOBLEMENTE LIGADAS CIRCULARES \n\n");
+						           	printf ("\n\n\t\t [a]. Crea Nodo al Inicio de la Lista \n");
+						           	printf ("\n\n\t\t [b]. Crea Nodo al Final de la Lista \n");
+						           	printf ("\n\n\t\t [c]. Insertar Nodo al Inicio de la Lista \n");
+						           	printf ("\n\n\t\t [d]. Insertar Nodo al Final de la Lista \n");
+						           	printf ("\n\n\t\t [e]. Insertar Antes de un Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [f]. Insertar Despues de un Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [g]. Eliminar el Primer Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [h]. Eliminar el Ultimo Nodo de la Lista \n");
+						           	printf ("\n\n\t\t [i]. Eliminar un Nodo con Informacion X \n");
+						           	printf ("\n\n\t\t [j]. Eliminar el Nodo Anterior al Nodo con Informacion X \n");
+						           	printf ("\n\n\t\t [k]. Busqueda en Lista Desordenada \n");
+						           	printf ("\n\n\t\t [l]. Recorre Recursivo \n");
+						           	printf ("\n\n\t\t [m]. Recorre Iterativo \n");
+						           	printf ("\n\n\t\t [n]. Libera la Memoria \n");
+						           	printf ("\n\n\t\t [o]. Salir \n\n");
+						           	printf ("\n\n\t\t\t      Escoja una Opcion: ");
+						           	scanf ("%c", &opcion4);
+						           	fflush (stdin);
+						           	printf ("\n\n\n");
+						           	switch (opcion4)
+						           	       {
+						           	       	case 'a':
+						           	       					           	       		     
+						           	       	case 'b':
+						           	             	       		     
+						           	       	case 'c':
+						          	       	case 'd':
+						           	       	case 'e':
+						           	        case 'f':
+						           	       	case 'g':
+						          	       	case 'h':
+						              	    case 'i':
+						           	        case 'j':
+						           	       	case 'k':
+						           	       	case 'l':
+						           	        case 'm':
+						           	       	
+						           	       	case 'n':
+						           	       		     if (p != NULL)
+						           	       		        {
+						           	       		         p = NULL;						           	       		         
+						           	       		         printf ("\n\n\n\t\t\t Memoria Libre !!!");
+						           	       		        }
+						           	       		     else
+						           	       		         printf ("\n\n\n\t\t La lista esta vacia !!!");
+						           	       		     getch();
+						           	       		     break;
+           	       		     
+						           	       	case 'o':
+						           	       		     if (p != NULL)
+						           	       		        {
+						           	       		         
+														 p = NULL;
+													    }
+						           	       		     y = 'x';
+						           	       		     break;
+		           	       		     
+						           	       	default:
+						           	       		     printf ("\n\n\t\t Opcion INVALIDA !!!");
+						           	       		     getch();
+						           	       		     break;   	       		      		     
+						           	       }
+							       }
+							 break;
+							 							 
+					 case 'e':
+   	  		     		     w = 'x';
+  	      		 		     break;
+		           	       		     
+		   	         default:
+						     printf ("\n\n\t\t Opcion INVALIDA !!!");
+						     getch();
+						     break;
+		   		    }
+           }
+    }
+/* ---------------------SECCION DE LISTAS SIMPLEMENTE LIGADAS--------INICIO------------- */
+void *creamemoria(int n)
+     {
+      int *p;
+      printf ("\n\n    BYTES a reservar: %i", n);
+      p = (int *) malloc (n);
+      
+      if (p == NULL)
+         {
+          puts ("Lo siento no hay suficiente memoria !!!");
+          getch();
+          exit (1);
+         }
+         
+      return (p);
+     }
+     
+nodo *creanodo()
+     {
+      return (nodo*)creamemoria(sizeof(nodo));
+     }
+     
+void recorrecursivo(nodo *p)
+     {
+      if (p != NULL)
+         {
+ 		  printf ("[ %d ]", p->num);
+		  if (p->liga != NULL)
+		      printf ("[ %p ] --> ", p->liga);
+		  else
+		      printf ("[ NULL ]");
+          if (p->liga != NULL)
+              recorrecursivo(p->liga);        
+         }
+      else
+         printf ("\n\n\n\t\t\t La lista esta vacia !!!");
+     }
+     
+void recorreiterativo(nodo *p)
+     {
+      nodo *q;
+      q = p;
+
+      if (q != NULL)
+         {
+          for (q = p; q != NULL; q = q->liga)
+            { 
+			  printf ("[ %d ]", q->num);
+			  if (q->liga != NULL)
+			      printf ("[ %p ] --> ", q->liga);
+			  else
+			      printf ("[ NULL ]");
+            }
+         }
+      else
+         printf ("\n\n\t\t La lista esta vacia !!!");
+     }
+       
+nodo *liberamemoria(nodo *p)
+     {
+      nodo *q = NULL;
+      while (p != NULL)
+            {
+             q = p;
+             p = p->liga;
+             free(q);
+            }
+      return (p);
+     }
+
+nodo *creainicio()
+     {
+      int i = 1, num;
+      nodo *p, *q;
+      printf ("\n Introduzca el primer valor entero: ");
+      scanf ("%d", &num);
+      fflush (stdin);
+      if (i == 1)
+         {
+          p = creanodo();
+          p->num = num;
+          p->liga = NULL;
+          
+		  printf ("\n\n\nNumero: %5d", p->num);
+          printf ("\nLiga: %p", p->liga);	      
+          getch();
+
+          do
+            {
+             printf ("\n\n\n Introduzca otro valor entero, si desea finalizar entre 99: ");
+             scanf ("%d", &num);
+             fflush (stdin);
+             i = num;
+             if (i != 99)
+                {
+   	             q = creanodo();
+                 q->num = num;
+   	             q->liga = p;
+   	             
+                 p = q;                 
+                 
+    			 printf ("\n\n\nNumero: %5d", q->num);
+                 printf ("\nLiga: %p", q->liga);
+                 getch();
+                 
+				}
+            }while (i != 99);
+         }
+      return (p);
+     }
+
+     
+/* ---------------------SECCION DE LISTAS SIMPLEMENTE LIGADAS--------FINAL------------- */
+
+/* --------------------------SECCION DE LISTAS CIRCULARES------------INICIO------------- */
+     
+/* --------------------------SECCION DE LISTAS CIRCULARES------------FINAL------------- */
+
+/* --------------------------SECCION DE LISTAS DOBLEMENTE LIGADAS------------INICIO------------- */
+
+/* ---------------------SECCION DE LISTAS DOBLEMENTE LIGADAS--------FINAL------------- */
+
+/* --------------------------SECCION DE LISTAS DOBLEMENTE LIGADAS CIRCULARES------------INICIO------------- */
+     
+
+/* --------------------------SECCION DE LISTAS DOBLEMENTE LIGADAS CIRCULARES------------FINAL------------- */
