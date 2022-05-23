@@ -500,6 +500,37 @@ nodo *creainicio()
       return (p);
      }
 
+
+     	// INSERTAR FINAL - SoyAndy
+
+nodo *insertafinal();
+{
+     nodo *p, *q;
+      int i = 0, num;
+      
+   printf("Introduce un numero\n");
+   scanf("%d",&num);
+      
+     p = insertanodo();
+     p->num = num;
+     p->sig = NULL;
+ 
+     if(q == NULL)
+     {
+               Lista = p;
+     }
+     else
+     {
+               while(q->sig != NULL)
+               {
+                         q = q->sig;
+               }
+               q->sig = p;
+	      
+     }
+}
+
+     
      
 /* ---------------------SECCION DE LISTAS SIMPLEMENTE LIGADAS--------FINAL------------- */
 
